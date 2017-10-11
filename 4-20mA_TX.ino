@@ -1,6 +1,8 @@
 # isolated_4-20MA_current_loop_transmitter
 #arduino code for ncd.io isolated 4-20mA current loop transmitter 
 #https://store.ncd.io/shop/?fwp_product_type=4-20ma-transmitter
+
+
 #include <Wire.h>
 void setup()
 {
@@ -21,7 +23,8 @@ void loop()
   Wire.write(i >> 4);        // 8 MSB
   Wire.write((i & 15) << 4); //4 LSB
   delay(100);
-  Serial.print (i, DEC);
+  Serial.print("4-20mA current trnasmitter output ");
+  Serial.println(i*0.013);
   Serial.print("\n");
   Wire.endTransmission();
   }
